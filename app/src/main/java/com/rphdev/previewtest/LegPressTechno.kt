@@ -4,13 +4,17 @@ import android.view.Surface
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
+import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.font.FontSynthesis.Companion.Weight
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -45,28 +49,50 @@ fun LegPressTechno() {
             fontSize = 25.sp,
             textAlign = TextAlign.Center
         )
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            horizontalAlignment = Alignment.Start,
-        ) {
+        Row(horizontalArrangement = Arrangement.SpaceEvenly,
+            modifier = Modifier.width(1500.dp)) {
             Text(
-                ("         Date"),
+                "Date",
                 Modifier.padding(top = 45.dp),
                 color = Color.Black,
-                fontSize = 25.sp,
-            )
+                fontSize = 25.sp)
+
+            val textState = remember { mutableStateOf("") }
+            TextField(
+                    value = textState.value,
+                    onValueChange = { textState.value = it },
+                    modifier = Modifier
+                        .width(150.dp)
+                        .height(75.dp)
+                        .padding(top = 30.dp)
+                    )
+            }
+
+        Row(horizontalArrangement = Arrangement.SpaceEvenly,
+            modifier = Modifier.width(1500.dp)) {
             Text(
-                ("         Weight"),
+                "Weight",
                 Modifier.padding(top = 20.dp),
                 color = Color.Black,
-                fontSize = 25.sp,
-            )
+                fontSize = 25.sp)
             Text(
-                ("         Reps"),
+                "Weight",
                 Modifier.padding(top = 20.dp),
                 color = Color.Black,
-                fontSize = 25.sp,
-            )
+                fontSize = 25.sp)
+        }
+        Row(horizontalArrangement = Arrangement.SpaceEvenly,
+            modifier = Modifier.width(1500.dp)) {
+            Text(
+                "Reps",
+                Modifier.padding(top = 20.dp),
+                color = Color.Black,
+                fontSize = 25.sp)
+            Text(
+                "Reps",
+                Modifier.padding(top = 20.dp),
+                color = Color.Black,
+                fontSize = 25.sp)
         }
 
         @Preview(showBackground = true)
