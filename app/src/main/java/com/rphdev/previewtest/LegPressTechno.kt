@@ -61,9 +61,10 @@ fun LegPressTechno() {
             TextField(
                     value = textState.value,
                     onValueChange = { textState.value = it },
+                    label = { Text(text = "      00/00/00") },
                     modifier = Modifier
                         .width(150.dp)
-                        .height(75.dp)
+                        .height(80.dp)
                         .padding(top = 30.dp)
                     )
             }
@@ -72,27 +73,37 @@ fun LegPressTechno() {
             modifier = Modifier.width(1500.dp)) {
             Text(
                 "Weight",
-                Modifier.padding(top = 20.dp),
+                Modifier.padding(top = 37.dp),
                 color = Color.Black,
                 fontSize = 25.sp)
-            Text(
-                "Weight",
-                Modifier.padding(top = 20.dp),
-                color = Color.Black,
-                fontSize = 25.sp)
+            val textState = remember { mutableStateOf("") }
+            TextField(
+                value = textState.value,
+                onValueChange = { textState.value = it },
+                label = { Text(text = "          lbs") },
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(80.dp)
+                    .padding(top = 30.dp)
+            )
         }
         Row(horizontalArrangement = Arrangement.SpaceEvenly,
             modifier = Modifier.width(1500.dp)) {
             Text(
                 "Reps",
-                Modifier.padding(top = 20.dp),
+                Modifier.padding(top = 30.dp),
                 color = Color.Black,
                 fontSize = 25.sp)
-            Text(
-                "Reps",
-                Modifier.padding(top = 20.dp),
-                color = Color.Black,
-                fontSize = 25.sp)
+            val textState = remember { mutableStateOf("") }
+            TextField(
+                value = textState.value,
+                onValueChange = { textState.value = it },
+                label = { Text(text = "          0 X 0") },
+                modifier = Modifier
+                    .width(150.dp)
+                    .height(70.dp)
+                    .padding(top = 20.dp)
+            )
         }
 
         @Preview(showBackground = true)
